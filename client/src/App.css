@@ -1,0 +1,47 @@
+:root {
+	--main-color: #eeeeee;
+	--primary-color: #00adb5;
+	--primary-background: #393e46;
+	--secondary-background: #222831;
+}
+
+html,
+body,
+#root {
+	height: 100%;
+}
+
+body {
+	margin: 0%;
+}
+
+.box-container {
+	height: 100% !important;
+	display: flex !important;
+	justify-content: center !important;
+	align-items: center !important;
+}
+
+.form-container {
+	background-color: var(--main-color);
+	border-radius: 5px;
+	height: fit-content;
+	width: 30%;
+	padding: 20px !important;
+	display: flex !important;
+	flex-direction: column !important;
+	row-gap: 20px !important;
+}
+
+.custom-text-field {
+	background-color: var(--main-color) !important;
+}
+
+.button {
+	color: var(--main-color) !important;
+	background-color: var(--primary-background) !important;
+}
+
+.button:hover {
+	background-color: var(--secondary-background) !important;
+}
