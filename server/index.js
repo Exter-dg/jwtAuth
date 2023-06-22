@@ -48,6 +48,14 @@ app.post("/login", (req, res) => {
 	});
 });
 
+app.post("/register", (req, res) => {
+	const { email, password } = req.body;
+	if (!email || !password) return res.status(400).send("Data not found");
+
+	data.push({ email, password });
+	res.send("Registered Succesfully");
+});
+
 app.post("/renewToken", (req, res) => {
 	const { refresh_token } = req.body;
 	// verify refresh token
