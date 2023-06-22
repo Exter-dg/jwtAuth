@@ -14,8 +14,17 @@ export default function Register() {
 		setInfo({ ...info, [name]: value });
 	};
 
-	const handleSubmit = () => {
-		console.log("Register");
+	const handleSubmit = async () => {
+		let results = await fetch("http://127.0.0.1:4000/register", {
+			method: "POST",
+			headers: {
+				Accept: "application/json",
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({ ...info }),
+		});
+		results = await results.text();
+		console.log(results);
 	};
 
 	return (

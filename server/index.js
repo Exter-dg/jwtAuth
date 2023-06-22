@@ -1,7 +1,14 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
+
+app.use(
+	cors({
+		origin: "http://localhost:3000",
+	})
+);
 
 const data = [
 	{
@@ -50,6 +57,7 @@ app.post("/login", (req, res) => {
 
 app.post("/register", (req, res) => {
 	const { email, password } = req.body;
+	console.log(email, password, req.body);
 	if (!email || !password) return res.status(400).send("Data not found");
 
 	data.push({ email, password });
